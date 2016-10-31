@@ -45,7 +45,8 @@ fi
 
 bash -x ./$TEST_RUNNER -s"SherlockTestSuite" "$ProjectFile"
 PID=$!
-check_status PID "Failed to pass regression testing "
+echo "$PID"
+check_status $PID "Failed to pass regression testing "
 
 
 trap shut SIGTERM SIGINT
